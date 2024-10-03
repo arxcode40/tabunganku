@@ -11,7 +11,7 @@
 
 	<?php $this->layout->include('assets/css') ?>
 </head>
-<body class="bg-body-secondary d-flex flex-column min-dvh-100">
+<body class="<?= $this->uri->segment(2) === 'laporan' ? '' : 'bg-body-secondary' ?> d-flex flex-column min-dvh-100">
 	<?php $this->layout->render_section('content') ?>
 	<?php $this->layout->include('assets/js') ?>
 </body>

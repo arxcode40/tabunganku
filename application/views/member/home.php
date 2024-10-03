@@ -134,7 +134,7 @@
 
 				<table class="align-middle mb-0 table table-borderless table-printed table-sm w-100" id="reportTable">
 					<thead>
-						<tr class="align-middle">
+						<tr class="align-middle table-dark">
 							<th class="text-start" scope="col">#</th>
 							<th scope="col">Kode</th>
 							<th scope="col">Nama</th>

@@ -14,9 +14,9 @@ class Auth extends CI_Controller {
 
 	public function login()
 	{
-		if($this->session->has_userdata('user'))
+		if ($this->session->has_userdata('user'))
 		{
-			if($this->auth_model->validate($this->session->userdata('user')))
+			if ($this->auth_model->validate($this->session->userdata('user')))
 			{
 				redirect('');
 			}
