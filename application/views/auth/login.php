@@ -7,18 +7,19 @@
 				form_open(
 					uri_string(),
 					array(
-						'class' => 'card shadow'
+						'class' => 'card shadow',
+						'data-aos' => 'zoom-in'
 					)
 				)
 			?>
-				<?php $this->layout->include('components/alert') ?>
-
 				<div class="align-items-center card-header d-flex">
-					<img alt="Logo TabunganKu" loading="lazy" src="favicon.svg" width="24" />
-					<h5 class="mb-0 ms-2"><?= $settings['application_name'] ?></h5>
+					<img alt="Logo <?= html_escape($settings['application_name']) ?>" loading="lazy" src="favicon.svg" width="24" />
+					<h5 class="mb-0 ms-2"><?= html_escape($settings['application_name']) ?></h5>
 				</div>
 				
 				<div class="card-body">
+					<?php $this->layout->include('components/alert') ?>
+
 					<div class="g-3 row">
 						<div class="col-12">
 							<label class="form-label" for="username">

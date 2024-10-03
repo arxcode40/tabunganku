@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 03, 2024 at 06:13 AM
+-- Generation Time: Oct 03, 2024 at 02:22 PM
 -- Server version: 9.0.0
 -- PHP Version: 8.3.10
 
@@ -37,6 +37,13 @@ CREATE TABLE `members` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`id`, `name`, `gender`, `email`, `tel`, `address`, `created_at`, `updated_at`) VALUES
+('M0000001', 'Arya Putra Sadewa', 'Laki-laki', 'aryaputrasadewa40@gmail.com', '0895339792382', 'Legok, Kab. Tangerang.', '2024-10-03 14:18:13', '2024-10-03 14:18:13');
 
 -- --------------------------------------------------------
 

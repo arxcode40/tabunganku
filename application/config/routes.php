@@ -50,8 +50,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['masuk'] = 'auth/login';
-$route['keluar'] = 'auth/logout';
+$route['keluar']['POST'] = 'auth/logout';
 
-$route['default_controller'] = 'welcome';
+$route['anggota'] = 'member/index';
+$route['anggota/tambah'] = 'member/create';
+$route['anggota/ubah/(:any)'] = 'member/update/$1';
+$route['anggota/hapus']['POST'] = 'member/delete';
+$route['anggota/laporan'] = 'member/report';
+
+$route['profil'] = 'user/index';
+$route['pengaturan'] = 'setting/index';
+
+$route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;

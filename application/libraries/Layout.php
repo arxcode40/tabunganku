@@ -51,8 +51,8 @@ class Layout {
 		}
 	}
 
-	public function include($view)
+	public function include($view, $vars = array())
 	{
-		$this->CI->load->view($view);
+		$this->CI->load->view($view, $vars);
 	}
 }
