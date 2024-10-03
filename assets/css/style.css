@@ -1,0 +1,46 @@
+.container-auth {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 21.5rem;
+  width: 100%;
+}
+
+.min-dvh-100 {
+  min-height: 100dvh;
+}
+
+.table-printed,
+.table-printed * {
+  border: 1px solid black;
+}
+
+.table-printed .table-group-divider {
+  border-bottom: calc(var(--bs-border-width) * 2) solid black;
+  border-top: calc(var(--bs-border-width) * 2) solid black;
+}
+
+::-webkit-scrollbar {
+  height: 0.25rem;
+  width: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #adb5bd;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6c757d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5c636a;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #565e64;
+}
