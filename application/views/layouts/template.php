@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <!doctype html>
 <html data-bs-theme="<?= html_escape($settings['application_theme']) ?>" lang="id">
 <head>

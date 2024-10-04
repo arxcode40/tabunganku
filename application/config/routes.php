@@ -58,6 +58,13 @@ $route['anggota/ubah/(:any)'] = 'member/update/$1';
 $route['anggota/hapus']['POST'] = 'member/delete';
 $route['anggota/laporan'] = 'member/report';
 
+$route['transaksi'] = 'transaction/index';
+$route['transaksi/rincian'] = 'transaction/detail';
+$route['transaksi/tambah'] = 'transaction/create';
+$route['transaksi/ubah/(:any)'] = 'transaction/update/$1';
+$route['transaksi/hapus']['POST'] = 'transaction/delete';
+$route['transaksi/laporan'] = 'transaction/report';
+
 $route['profil'] = 'user/index';
 $route['pengaturan'] = 'setting/index';
 
