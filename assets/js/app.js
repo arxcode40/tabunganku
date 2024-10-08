@@ -9,12 +9,12 @@ function currencyFormat() {
     number = number.replace(/[\D]+/g, "");
 
     if (number === "") {
-      return number;
+      return 0;
     }
 
-    number = parseInt(number.replace(/[\.]+/g, ""));
+    number = BigInt(number.replace(/[\.]+/g, ""));
 
-    number = new Intl.NumberFormat("id-ID").format(number);
+    number = new Intl.NumberFormat("id-ID").format(BigInt(number));
 
     return number;
   })

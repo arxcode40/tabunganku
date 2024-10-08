@@ -17,8 +17,13 @@
 								'url' => '/'
 							),
 							array(
+								'icon' => 'arrow-down-up',
+								'name' => 'Data transaksi',
+								'url' => '/transaksi/'
+							),
+							array(
 								'icon' => 'person-standing',
-								'name' => 'Data anggota'
+								'name' => $member['name']
 							)
 						)
 					)
@@ -29,7 +34,7 @@
 				<div class="align-items-center card-header d-flex">
 					<h5 class="mb-0 me-auto">
 						<i class="bi bi-table"></i>
-						Tabel anggota
+						Tabel transaksi
 					</h5>
 					<div class="dropdown me-1">
 						<button class="btn btn-secondary btn-sm dropdown-toggle shadow" data-bs-toggle="dropdown" type="button">
@@ -63,14 +68,14 @@
 								</button>
 							</li>
 							<li>
-								<a class="dropdown-item" href="/anggota/laporan/" target="_blank">
+								<a class="dropdown-item" href="/transaksi/laporan/<?= $member['id'] ?>/" target="_blank">
 									<i class="bi bi-printer-fill"></i>
 									Cetak
 								</a>
 							</li>
 						</ul>
 					</div>
-					<a class="btn btn-primary btn-sm shadow" href="/anggota/tambah/">
+					<a class="btn btn-primary btn-sm shadow" href="/transaksi/<?= $member['id'] ?>/tambah/">
 						<i class="bi bi-plus-lg"></i>
 						<span class="d-none d-sm-inline">Tambah</span>
 					</a>
@@ -83,33 +88,34 @@
 								<tr class="align-middle">
 									<th class="text-start" scope="col">#</th>
 									<th scope="col">Kode</th>
-									<th scope="col">Nama</th>
-									<th scope="col">Jenis kelamin</th>
-									<th scope="col">Email</th>
-									<th class="text-start" scope="col">No. telp</th>
+									<th scope="col">Tanggal</th>
+									<th scope="col">Pemasukan</th>
+									<th scope="col">Pengeluaran</th>
 									<th scope="col">Aksi</th>
 								</tr>
 							</thead>
 
 							<tbody class="table-group-divider">
-								<?php foreach ($members as $index => $member): ?>
-									<tr class="align-middle <?= $this->session->flashdata('affected_rows') === NULL ? '' : ($this->session->flashdata('affected_rows') === $member['id'] ? 'table-blink table-primary' : '') ?>">
+								<?php $deposit = $withdraw = 0 ?>
+								<?php foreach ($transactions as $index => $transaction): ?>
+									<tr class="align-middle <?= $this->session->flashdata('affected_rows') === NULL ? '' : ($this->session->flashdata('affected_rows') === $transaction['id'] ? 'table-blink table-primary' : '') ?>">
 										<th class="text-start" scope="row"><?= $index + 1 ?></th>
-										<td><?= html_escape($member['id']) ?></td>
-										<td><?= html_escape($member['name']) ?></td>
-										<td><?= html_escape($member['gender']) ?></td>
-										<td><?= html_escape($member['email']) ?></td>
-										<td class="text-start"><?= html_escape($member['tel']) ?></td>
+										<td><?= html_escape($transaction['id']) ?></td>
+										<td><?= html_escape(nice_date($transaction['date'], 'd M Y')) ?></td>
+										<td>Rp<?= html_escape(number_format($transaction['deposit'], 0, ',', '.')) ?></td>
+										<?php $deposit += $transaction['deposit'] ?>
+										<td>Rp<?= html_escape(number_format($transaction['withdraw'], 0, ',', '.')) ?></td>
+										<?php $withdraw += $transaction['withdraw'] ?>
 										<td class="text-nowrap">
-											<a class="btn btn-primary btn-sm shadow" href="/anggota/ubah/<?= html_escape($member['id']) ?>/">
+											<a class="btn btn-primary btn-sm shadow" href="/transaksi/<?= html_escape($member['id']) ?>/ubah/<?= html_escape($transaction['id']) ?>/">
 												<i class="bi bi-pencil-square"></i>
 												<span class="d-none d-sm-inline">Ubah</span>
 											</a>
 											<?=
 												form_open(
-													"anggota/hapus",
+													"transaksi/{$member['id']}/hapus",
 													array('class' => 'd-inline-block'),
-													array('id' => html_escape($member['id']))
+													array('id' => html_escape($transaction['id']))
 												)
 											?>
 												<button class="btn btn-danger btn-sm shadow" type="submit">
@@ -121,6 +127,25 @@
 									</tr>
 								<?php endforeach ?>
 							</tbody>
+
+							<tfoot>
+								<tr class="align-middle">
+									<td class="text-end" colspan="3">Total</td>
+									<td>
+										<strong>Rp<?= html_escape(number_format($deposit, 0, ',', '.')) ?></strong>
+									</td>
+									<td colspan="2">
+										<strong>Rp<?= html_escape(number_format($withdraw, 0, ',', '.')) ?></strong>
+									</td>
+								</tr>
+
+								<tr class="align-middle">
+									<td class="text-end" colspan="3">Jumlah</td>
+									<td colspan="3">
+										<strong>Rp<?= html_escape(number_format($deposit - $withdraw, 0, ',', '.')) ?></strong>
+									</td>
+								</tr>
+							</tfoot>
 						</table>
 					</div>
 				</div>
@@ -137,27 +162,44 @@
 						<tr class="align-middle table-dark">
 							<th class="text-start" scope="col">#</th>
 							<th scope="col">Kode</th>
-							<th scope="col">Nama</th>
-							<th scope="col">Jenis kelamin</th>
-							<th scope="col">Email</th>
-							<th class="text-start" scope="col">No. telp</th>
-							<th scope="col">Alamat</th>
+							<th scope="col">Tanggal</th>
+							<th scope="col">Pemasukan</th>
+							<th scope="col">Pengeluaran</th>
 						</tr>
 					</thead>
 
 					<tbody class="table-group-divider">
-						<?php foreach ($members as $index => $member): ?>
+						<?php $deposit = $withdraw = 0 ?>
+						<?php foreach ($transactions as $index => $transaction): ?>
 							<tr class="align-middle">
 								<th class="text-start" scope="row"><?= $index + 1 ?></th>
-								<td><?= html_escape($member['id']) ?></td>
-								<td><?= html_escape($member['name']) ?></td>
-								<td><?= html_escape($member['gender']) ?></td>
-								<td><?= html_escape($member['email']) ?></td>
-								<td class="text-start"><?= html_escape($member['tel']) ?></td>
-								<td><?= html_escape($member['address']) ?></td>
+								<td><?= html_escape($transaction['id']) ?></td>
+								<td><?= html_escape(nice_date($transaction['date'], 'd M Y')) ?></td>
+								<td>Rp<?= html_escape(number_format($transaction['deposit'], 0, ',', '.')) ?></td>
+								<?php $deposit += $transaction['deposit'] ?>
+								<td>Rp<?= html_escape(number_format($transaction['withdraw'], 0, ',', '.')) ?></td>
+								<?php $withdraw += $transaction['withdraw'] ?>
 							</tr>
 						<?php endforeach ?>
 					</tbody>
+
+					<tfoot>
+						<tr class="align-middle table-dark">
+							<td class="text-end" colspan="3">Total</td>
+							<td>
+								<strong>Rp<?= html_escape(number_format($deposit, 0, ',', '.')) ?></strong>
+							</td>
+							<td>
+								<strong>Rp<?= html_escape(number_format($withdraw, 0, ',', '.')) ?></strong>
+							</td>
+						</tr>
+						<tr class="align-middle table-dark">
+							<td class="text-end" colspan="3">Jumlah</td>
+							<td colspan="2">
+								<strong>Rp<?= html_escape(number_format($deposit - $withdraw, 0, ',', '.')) ?></strong>
+							</td>
+						</tr>
+					</tfoot>
 				</table>
 			</div>
 		</div>

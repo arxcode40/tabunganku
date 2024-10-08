@@ -49,16 +49,20 @@
 							</thead>
 
 							<tbody class="table-group-divider">
+								<?php $deposit = $withdraw = $total = 0 ?>
 								<?php foreach ($transactions as $index => $transaction): ?>
 									<tr class="align-middle">
 										<th class="text-start" scope="row"><?= $index + 1 ?></th>
 										<td><?= html_escape($transaction['id']) ?></td>
 										<td><?= html_escape($transaction['name']) ?></td>
 										<td>Rp<?= html_escape(number_format($transaction['deposit'], 0, ',', '.')) ?></td>
+										<?php $deposit += $transaction['deposit'] ?>
 										<td>Rp<?= html_escape(number_format($transaction['withdraw'], 0, ',', '.')) ?></td>
+										<?php $withdraw += $transaction['withdraw'] ?>
 										<td>Rp<?= html_escape(number_format($transaction['total'], 0, ',', '.')) ?></td>
+										<?php $total += $transaction['total'] ?>
 										<td class="text-nowrap">
-											<a class="btn btn-primary btn-sm shadow" href="/transaksi/detail/<?= html_escape($transaction['id']) ?>/">
+											<a class="btn btn-primary btn-sm shadow" href="/transaksi/<?= html_escape($transaction['id']) ?>/">
 												<i class="bi bi-eye"></i>
 												<span class="d-none d-sm-inline">Rincian</span>
 											</a>
@@ -66,6 +70,22 @@
 									</tr>
 								<?php endforeach ?>
 							</tbody>
+
+							<tfoot>
+								<tr class="align-middle">
+									<td class="text-end" colspan="3">Jumlah</td>
+									<td>
+										<strong>Rp<?= html_escape(number_format($deposit, 0, ',', '.')) ?></strong>
+									</td>
+									<td>
+										<strong>Rp<?= html_escape(number_format($withdraw, 0, ',', '.')) ?></strong>
+									</td>
+									<td>
+										<strong>Rp<?= html_escape(number_format($total, 0, ',', '.')) ?></strong>
+									</td>
+									<td>&nbsp;</td>
+								</tr>
+							</tfoot>
 						</table>
 					</div>
 				</div>

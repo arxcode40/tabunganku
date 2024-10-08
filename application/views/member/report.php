@@ -19,7 +19,6 @@
 					</tr>
 				</thead>
 
-				<!-- Table body -->
 				<tbody class="table-group-divider">
 					<?php foreach ($members as $index => $member): ?>
 						<tr class="align-middle">

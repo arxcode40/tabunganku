@@ -36,6 +36,15 @@ class Transaction_model extends CI_Model {
 		return $this->db->get('transactions')->result_array();
 	}
 
+	public function detail($id)
+	{
+		$this->db->select('transactions.*, transactions.id AS id');
+		$this->db->join('members', 'members.id = transactions.member_id', 'inner');
+		$this->db->where('transactions.member_id', $id);
+
+		return $this->db->get('transactions')->result_array();
+	}
+
 	public function get($id)
 	{
 		$this->db->where('id', $id);
@@ -44,15 +53,14 @@ class Transaction_model extends CI_Model {
 		return $this->db->get('transactions')->row_array();
 	}
 
-	public function create()
+	public function create($id)
 	{
 		$transaction_data = array(
 			'id' => $this->last(),
-			'name' => $this->input->post('name'),
-			'gender' => $this->input->post('gender'),
-			'email' => $this->input->post('email'),
-			'tel' => $this->input->post('tel'),
-			'address' => $this->input->post('address'),
+			'member_id' => $id,
+			'date' => $this->input->post('date'),
+			'deposit' => (int) preg_replace('/[\.]+/', '', $this->input->post('deposit')),
+			'withdraw' => (int) preg_replace('/[\.]+/', '', $this->input->post('withdraw')),
 			'created_at' => mdate('%Y-%m-%d %H:%i:%s'),
 			'updated_at' => mdate('%Y-%m-%d %H:%i:%s'),
 		);
@@ -83,17 +91,17 @@ class Transaction_model extends CI_Model {
 					'text' => 'Data transaksi berhasil ditambahkan'
 				)
 			);
+
+			$this->session->set_flashdata('affected_rows', $transaction_data['id']);
 		}
 	}
 
 	public function update($id)
 	{
 		$transaction_data = array(
-			'name' => $this->input->post('name'),
-			'gender' => $this->input->post('gender'),
-			'email' => $this->input->post('email'),
-			'tel' => $this->input->post('tel'),
-			'address' => $this->input->post('address'),
+			'date' => $this->input->post('date'),
+			'deposit' => (int) preg_replace('/[\.]+/', '', $this->input->post('deposit')),
+			'withdraw' => (int) preg_replace('/[\.]+/', '', $this->input->post('withdraw')),
 			'updated_at' => mdate('%Y-%m-%d %H:%i:%s'),
 		);
 
@@ -124,6 +132,8 @@ class Transaction_model extends CI_Model {
 					'text' => 'Data transaksi berhasil diubah'
 				)
 			);
+
+			$this->session->set_flashdata('affected_rows', $id);
 		}
 
 		$this->db->reset_query();

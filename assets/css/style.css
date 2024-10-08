@@ -14,8 +14,18 @@
   min-height: 100dvh;
 }
 
+@keyframes table-blink {
+  100% {
+    --bs-table-bg: rgba(0, 0, 0, 0);
+  }
+}
+
+.table-blink {
+  animation: table-blink 1s linear 3;
+}
+
 .table-printed,
-.table-printed * {
+.table-printed :is(thead, tbody, tfoot, tr, th, td) {
   border: 1px solid black;
 }
 

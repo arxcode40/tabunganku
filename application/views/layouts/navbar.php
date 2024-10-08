@@ -37,7 +37,7 @@
 							</a>
 						</li>
 						<li>
-							<a class="<?= $this->uri->segment(1) !== 'buku' ? '' : 'active' ?> dropdown-item" href="/transaksi/">
+							<a class="<?= $this->uri->segment(1) !== 'transaksi' ? '' : 'active' ?> dropdown-item" href="/transaksi/">
 								<i class="bi bi-arrow-down-up"></i>
 								Data transaksi
 							</a>

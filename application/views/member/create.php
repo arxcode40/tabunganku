@@ -40,7 +40,6 @@
 					)
 				)
 			?>
-				<!-- Card header -->
 				<div class="align-items-center card-header d-flex">
 					<h5 class="mb-0 me-auto">
 						<i class="bi bi-plus-lg"></i>

@@ -79,6 +79,8 @@ class Member_model extends CI_Model {
 					'text' => 'Data anggota berhasil ditambahkan'
 				)
 			);
+
+			$this->session->set_flashdata('affected_rows', $member_data['id']);
 		}
 	}
 
@@ -120,6 +122,8 @@ class Member_model extends CI_Model {
 					'text' => 'Data anggota berhasil diubah'
 				)
 			);
+
+			$this->session->set_flashdata('affected_rows', $id);
 		}
 
 		$this->db->reset_query();
@@ -130,6 +134,9 @@ class Member_model extends CI_Model {
 		$this->db->trans_start();
 		$this->db->where('id', $this->input->post('id'));
 		$this->db->delete('members');
+		$this->db->reset_query();
+		$this->db->where('member_id', $this->input->post('id'));
+		$this->db->delete('transactions');
 		$this->db->trans_complete();
 
 		if ($this->db->trans_status() === FALSE)

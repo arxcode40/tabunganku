@@ -54,16 +54,16 @@ $route['keluar']['POST'] = 'auth/logout';
 
 $route['anggota'] = 'member/index';
 $route['anggota/tambah'] = 'member/create';
-$route['anggota/ubah/(:any)'] = 'member/update/$1';
+$route['anggota/ubah/(M\d{7})'] = 'member/update/$1';
 $route['anggota/hapus']['POST'] = 'member/delete';
 $route['anggota/laporan'] = 'member/report';
 
 $route['transaksi'] = 'transaction/index';
-$route['transaksi/rincian'] = 'transaction/detail';
-$route['transaksi/tambah'] = 'transaction/create';
-$route['transaksi/ubah/(:any)'] = 'transaction/update/$1';
-$route['transaksi/hapus']['POST'] = 'transaction/delete';
-$route['transaksi/laporan'] = 'transaction/report';
+$route['transaksi/(M\d{7})'] = 'transaction/detail/$1';
+$route['transaksi/(M\d{7})/tambah'] = 'transaction/create/$1';
+$route['transaksi/(M\d{7})/ubah/(T\d{7})'] = 'transaction/update/$2/$1';
+$route['transaksi/(M\d{7})/hapus']['POST'] = 'transaction/delete/$1';
+$route['transaksi/laporan/(M\d{7})'] = 'transaction/report/$1';
 
 $route['profil'] = 'user/index';
 $route['pengaturan'] = 'setting/index';
