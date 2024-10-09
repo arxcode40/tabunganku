@@ -53,7 +53,7 @@
 				</div>
 
 				<div class="card-body">
-					<div class="mb-3 g-3 row">
+					<div class="gx-3 mb-3 row">
 						<label class="col-md-4 col-lg-3 col-form-label d-md-flex" for="id">
 							Kode anggota<b class="text-danger">*</b>
 							<span class="d-none d-md-block fw-medium ms-auto">:</span>
@@ -62,7 +62,7 @@
 							<input class="form-control" disabled="disabled" id="id" type="text" value="<?= html_escape($member['id']) ?>" />
 						</div>
 					</div>
-					<div class="mb-3 g-3 row">
+					<div class="gx-3 mb-3 row">
 						<label class="col-md-4 col-lg-3 col-form-label d-md-flex" for="name">
 							Nama anggota<b class="text-danger">*</b>
 							<span class="d-none d-md-block fw-medium ms-auto">:</span>
@@ -72,7 +72,7 @@
 							<?= form_error('name', '<div class="invalid-feedback">', '</div>') ?>
 						</div>
 					</div>
-					<fieldset class="mb-3 g-3 row">
+					<fieldset class="gx-3 mb-3 row">
 						<legend class="col-md-4 col-lg-3 col-form-label d-md-flex pt-0">
 							Jenis kelamin<b class="text-danger">*</b>
 							<span class="d-none d-md-block fw-medium ms-auto">:</span>
@@ -89,7 +89,7 @@
 							<?= form_error('gender', '<div class="invalid-feedback">', '</div>') ?>
 						</div>
 					</fieldset>
-					<div class="mb-3 g-3 row">
+					<div class="gx-3 mb-3 row">
 						<label class="col-md-4 col-lg-3 col-form-label d-md-flex" for="email">
 							Email anggota<b class="text-danger">*</b>
 							<span class="d-none d-md-block fw-medium ms-auto">:</span>
@@ -99,7 +99,7 @@
 							<?= form_error('email', '<div class="invalid-feedback">', '</div>') ?>
 						</div>
 					</div>
-					<div class="mb-3 g-3 row">
+					<div class="gx-3 mb-3 row">
 						<label class="col-md-4 col-lg-3 col-form-label d-md-flex" for="tel">
 							Nomor telepon<b class="text-danger">*</b>
 							<span class="d-none d-md-block fw-medium ms-auto">:</span>
@@ -109,7 +109,7 @@
 							<?= form_error('tel', '<div class="invalid-feedback">', '</div>') ?>
 						</div>
 					</div>
-					<div class="g-3 row">
+					<div class="gx-3 row">
 						<label class="col-md-4 col-lg-3 col-form-label d-md-flex" for="address">
 							Alamat anggota
 							<span class="d-none d-md-block fw-medium ms-auto">:</span>

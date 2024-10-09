@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 08, 2024 at 06:57 AM
+-- Generation Time: Oct 09, 2024 at 05:59 AM
 -- Server version: 9.0.0
 -- PHP Version: 8.3.10
 
@@ -109,7 +109,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
-('U0000001', 'administrator', '$2y$10$NPrFsRuvcwvHLM4jGVVKnuHx6PjR5.3e/pzxztlYMfjnO.g.mla3K', 'Administrator');
+('U0000001', 'administrator', '$2y$10$g9G.BAEVZLnEwWxoTjfoLej0KyJ0JIIeIu/77YWJBoy4nN.oro4Kq', 'Administrator');
 
 --
 -- Indexes for dumped tables
