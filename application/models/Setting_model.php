@@ -4,11 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Setting_model extends CI_Model {
 
 	public function get() {
-		$rows = $this->db->get('settings')->result_array();
+		$settings = $this->db->get('settings')->result_array();
 
-		foreach ($rows as $row)
+		foreach ($settings as $setting)
 		{
-			$data[$row['name']] = $row['value'];
+			$data[$setting['name']] = $setting['value'];
 		}
 
 		return $data;
@@ -27,9 +27,8 @@ class Setting_model extends CI_Model {
 			)
 		);
 
-		// Update settings data
 		$this->db->trans_start();
-		$this->db->update_batch('settings', $setting_data, 'setting_name');
+		$this->db->update_batch('settings', $setting_data, 'name');
 		$this->db->trans_complete();
 
 		if ($this->db->trans_status() === FALSE)
