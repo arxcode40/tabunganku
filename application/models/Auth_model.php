@@ -5,8 +5,7 @@ class Auth_model extends CI_Model {
 
 	public function validate($user)
 	{
-		$this->db->where('id', $user['id']);
-		$this->db->where('username', $user['username']);
+		$this->db->where($user);
 		$this->db->limit(1);
 
 		return (bool) $this->db->get('users')->num_rows();

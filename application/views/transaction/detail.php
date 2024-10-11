@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -41,7 +43,6 @@
 							<i class="bi bi-upload"></i>
 							<span class="d-none d-sm-inline">Ekspor</span>
 						</button>
-
 						<ul class="dropdown-menu dropdown-menu-end">
 							<li>
 								<h6 class="dropdown-header">
@@ -68,7 +69,7 @@
 								</button>
 							</li>
 							<li>
-								<a class="dropdown-item" href="/transaksi/laporan/<?= $member['id'] ?>/" target="_blank">
+								<a class="dropdown-item" href="/transaksi/<?= $member['id'] ?>/laporan/" target="_blank">
 									<i class="bi bi-printer-fill"></i>
 									Cetak
 								</a>
@@ -80,7 +81,6 @@
 						<span class="d-none d-sm-inline">Tambah</span>
 					</a>
 				</div>
-
 				<div class="card-body">
 					<div class="table-responsive">
 						<table class="align-middle mb-0 table table-bordered table-hover table-striped w-100" id="dataTable">
@@ -94,7 +94,6 @@
 									<th scope="col">Aksi</th>
 								</tr>
 							</thead>
-
 							<tbody class="table-group-divider">
 								<?php $deposit = $withdraw = 0 ?>
 								<?php foreach ($transactions as $index => $transaction): ?>
@@ -127,7 +126,6 @@
 									</tr>
 								<?php endforeach ?>
 							</tbody>
-
 							<tfoot>
 								<tr class="align-middle">
 									<td class="text-end" colspan="3">Total</td>
@@ -138,7 +136,6 @@
 										<strong>Rp<?= html_escape(number_format($withdraw, 0, ',', '.')) ?></strong>
 									</td>
 								</tr>
-
 								<tr class="align-middle">
 									<td class="text-end" colspan="3">Jumlah</td>
 									<td colspan="3">
@@ -151,12 +148,10 @@
 				</div>
 			</div>
 		</div>
-
 		<div hidden="hidden">
 			<div class="container py-3 text-body-emphasis" data-bs-theme="light" id="reportPage">
 				<h4 class="mb-0 text-center">Laporan <?= html_escape($settings['application_name']) ?></h4>
 				<h4 class="mb-3 text-center"><?= $title ?></h4>
-
 				<table class="align-middle mb-0 table table-borderless table-printed table-sm w-100" id="reportTable">
 					<thead>
 						<tr class="align-middle table-dark">
@@ -167,7 +162,6 @@
 							<th scope="col">Pengeluaran</th>
 						</tr>
 					</thead>
-
 					<tbody class="table-group-divider">
 						<?php $deposit = $withdraw = 0 ?>
 						<?php foreach ($transactions as $index => $transaction): ?>
@@ -182,7 +176,6 @@
 							</tr>
 						<?php endforeach ?>
 					</tbody>
-
 					<tfoot>
 						<tr class="align-middle table-dark">
 							<td class="text-end" colspan="3">Total</td>

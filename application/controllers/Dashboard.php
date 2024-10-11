@@ -19,11 +19,10 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		// Dashboard view
 		$data['settings'] = $this->settings;
 		$data['title'] = 'Dasbor';
-		$data['total_members'] = $this->db->get('members')->num_rows();
-		$data['total_transactions'] = $this->db->get('transactions')->num_rows();
+		$data['total_members'] = $this->db->count_all('members');
+		$data['total_transactions'] = $this->db->count_all('transactions');
 
 		$this->layout->view('dashboard/home', $data);
 	}

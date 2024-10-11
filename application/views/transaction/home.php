@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -32,7 +34,6 @@
 						Tabel transaksi
 					</h5>
 				</div>
-
 				<div class="card-body">
 					<div class="table-responsive">
 						<table class="align-middle mb-0 table table-bordered table-hover table-striped w-100" id="dataTable">
@@ -47,7 +48,6 @@
 									<th scope="col">Aksi</th>
 								</tr>
 							</thead>
-
 							<tbody class="table-group-divider">
 								<?php $deposit = $withdraw = $total = 0 ?>
 								<?php foreach ($transactions as $index => $transaction): ?>
@@ -55,11 +55,11 @@
 										<th class="text-start" scope="row"><?= $index + 1 ?></th>
 										<td><?= html_escape($transaction['id']) ?></td>
 										<td><?= html_escape($transaction['name']) ?></td>
-										<td>Rp<?= html_escape(number_format($transaction['deposit'], 0, ',', '.')) ?></td>
+										<td>Rp<?= html_escape(number_format($transaction['deposit'] ?? 0, 0, ',', '.')) ?></td>
 										<?php $deposit += $transaction['deposit'] ?>
-										<td>Rp<?= html_escape(number_format($transaction['withdraw'], 0, ',', '.')) ?></td>
+										<td>Rp<?= html_escape(number_format($transaction['withdraw'] ?? 0, 0, ',', '.')) ?></td>
 										<?php $withdraw += $transaction['withdraw'] ?>
-										<td>Rp<?= html_escape(number_format($transaction['total'], 0, ',', '.')) ?></td>
+										<td>Rp<?= html_escape(number_format($transaction['total'] ?? 0, 0, ',', '.')) ?></td>
 										<?php $total += $transaction['total'] ?>
 										<td class="text-nowrap">
 											<a class="btn btn-primary btn-sm shadow" href="/transaksi/<?= html_escape($transaction['id']) ?>/">
@@ -70,7 +70,6 @@
 									</tr>
 								<?php endforeach ?>
 							</tbody>
-
 							<tfoot>
 								<tr class="align-middle">
 									<td class="text-end" colspan="3">Jumlah</td>

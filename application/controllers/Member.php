@@ -132,6 +132,7 @@ class Member extends CI_Controller {
 		$data['settings'] = $this->settings;
 		$data['settings']['application_theme'] = 'light';
 		$data['title'] = 'Laporan Data Anggota';
+		$data['print'] = TRUE;
 		$data['members'] = $this->member_model->all();
 
 		$this->layout->view('member/report', $data);

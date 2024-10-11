@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -55,7 +57,6 @@
 						<span class="d-none d-sm-inline">Kembali</span>
 					</a>
 				</div>
-
 				<div class="card-body">
 					<div class="gx-3 mb-3 row">
 						<label class="col-md-4 col-lg-3 col-form-label d-md-flex" for="id">
@@ -112,7 +113,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="card-footer">
 					<button class="btn btn-primary shadow" type="submit">
 						<i class="bi bi-pencil-square"></i>

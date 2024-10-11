@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <meta charset="utf-8" />
 <meta content="initial-scale=1.0, width=device-width" name="viewport" />
 <meta content="ie=edge" http-equiv="X-UA-Compatible" />

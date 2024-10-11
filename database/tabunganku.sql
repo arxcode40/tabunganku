@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 09, 2024 at 05:59 AM
+-- Generation Time: Oct 11, 2024 at 03:21 AM
 -- Server version: 9.0.0
 -- PHP Version: 8.3.10
 
@@ -37,14 +37,6 @@ CREATE TABLE `members` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `members`
---
-
-INSERT INTO `members` (`id`, `name`, `gender`, `email`, `tel`, `address`, `created_at`, `updated_at`) VALUES
-('M0000001', 'Arya Putra Sadewa', 'Laki-laki', 'aryaputrasadewa40@gmail.com', '0895339792382', 'Legok, Kab. Tangerang.', '2024-10-03 14:18:13', '2024-10-03 14:18:13'),
-('M0000002', 'John Doe', 'Laki-laki', 'johndoe@gmail.com', '081234567890', '', '2024-10-04 06:53:47', '2024-10-04 06:53:47');
 
 -- --------------------------------------------------------
 
@@ -80,16 +72,6 @@ CREATE TABLE `transactions` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `transactions`
---
-
-INSERT INTO `transactions` (`id`, `member_id`, `date`, `deposit`, `withdraw`, `created_at`, `updated_at`) VALUES
-('T0000001', 'M0000001', '2024-10-04', 500000, 0, '2024-10-04 07:48:52', '2024-10-04 07:48:52'),
-('T0000002', 'M0000002', '2024-10-04', 400000, 0, '2024-10-04 07:48:52', '2024-10-04 07:48:52'),
-('T0000003', 'M0000001', '2024-10-04', 100000, 150000, '2024-10-04 07:55:32', '2024-10-04 07:55:32'),
-('T0000004', 'M0000002', '2024-10-04', 100000, 100000, '2024-10-04 07:55:39', '2024-10-04 07:55:39');
 
 -- --------------------------------------------------------
 

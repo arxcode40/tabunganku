@@ -20,15 +20,6 @@ function currencyFormat() {
   })
 }
 
-function returnDetail() {
-  const id = $(event.target).val();
-  const data = returns.filter(data => data.id === id)[0];
-
-  $("#fullname").val(data.fullname);
-  $("#title").val(data.title);
-  $("#checkoutDate").attr("min", data.lending_date);
-}
-
 function showPassword() {
   const toggler = $(event.target);
   const target = $(toggler).prev();
@@ -71,6 +62,12 @@ function tableToPDF(name, title, timestamp) {
   });
 }
 
+function telFormat() {
+  $(event.target).val(function(index, tel) {
+    return tel.replace(/[\D]+/g, "");
+  })
+}
+
 $(document).on("scroll", function() {
   if ($(document).scrollTop() > 20) {
     $("#scrollToTop").fadeIn("fast");
@@ -88,7 +85,7 @@ AOS.init({
 $("#dataTable").DataTable({
   fixedColumns: true,
   language: {
-    url: "https://cdn.datatables.net/plug-ins/2.1.6/i18n/id.json"
+    url: "/assets/json/dataTables.i18n.id.json"
   },
   scrollX: true,
 });

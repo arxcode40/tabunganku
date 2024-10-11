@@ -13,7 +13,7 @@ class Member_model extends CI_Model {
 		}
 		else
 		{
-			$last_id = intval(substr($result['id'] ?? 'M0000000', 1));
+			$last_id = (int) substr($result['id'], 1);
 
 			return 'M' . str_repeat(0, 7 - strlen($last_id)) . ++$last_id;
 		}

@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -39,7 +41,6 @@
 					<i class="bi bi-person-fill"></i>
 					Profil saya
 				</h5>
-
 				<div class="card-body">
 					<div class="gx-3 mb-3 row">
 						<label class="col-md-4 col-lg-3 col-form-label d-md-flex" for="username">
@@ -97,7 +98,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="card-footer">
 					<button class="btn btn-primary shadow" type="submit">
 						<i class="bi bi-floppy-fill"></i>

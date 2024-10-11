@@ -69,6 +69,7 @@ class Auth extends CI_Controller {
 
 			if ( ! $user)
 			{
+				$this->session->set_tempdata('login_attempts', ($login_attempts + 1) ?? 1, $this->login_attempts_expire);
 				$this->session->set_flashdata(
 					'alert',
 					array(

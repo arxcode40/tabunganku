@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -39,7 +41,6 @@
 					<i class="bi bi-gear-fill"></i>
 					Pengaturan
 				</h5>
-
 				<div class="card-body">
 					<div class="gx-3 mb-3 row">
 						<label class="col-md-4 col-lg-3 col-form-label d-md-flex" for="applicationName">
@@ -47,7 +48,7 @@
 							<span class="d-none d-md-block fw-medium ms-auto">:</span>
 						</label>
 						<div class="col-md-8 col-lg-9">
-							<input autofocus="autofocus" class="form-control <?= form_error('application_name') === '' ? '' : 'is-invalid' ?>" id="applicationName" name="application_name" placeholder="Masukkan nama pengguna" type="text" value="<?= html_escape(set_value('application_name', $settings['application_name'])) ?>" />
+							<input autofocus="autofocus" class="form-control <?= form_error('application_name') === '' ? '' : 'is-invalid' ?>" id="applicationName" name="application_name" placeholder="Masukkan nama aplikasi" type="text" value="<?= html_escape(set_value('application_name', $settings['application_name'])) ?>" />
 							<?= form_error('application_name', '<div class="invalid-feedback">', '</div>') ?>
 						</div>
 					</div>
@@ -58,18 +59,17 @@
 						</legend>
 						<div class="col-md-8 col-lg-9">
 							<div class="form-check">
-								<input class="form-check-input <?= form_error('application_theme') === '' ? '' : 'is-invalid' ?>" <?= set_radio('application_theme', 'light', html_escape($settings['application_theme']) === 'light') ?> id="lightTheme" name="application_theme" type="radio" value="light" />
+								<input class="form-check-input <?= form_error('application_theme') === '' ? '' : 'is-invalid' ?>" <?= set_radio('application_theme', 'light', $settings['application_theme'] === 'light') ?> id="lightTheme" name="application_theme" type="radio" value="light" />
 								<label class="form-check-label" for="lightTheme">Tema terang</label>
 							</div>
 							<div class="form-check">
-								<input class="form-check-input <?= form_error('application_theme') === '' ? '' : 'is-invalid' ?>" <?= set_radio('application_theme', 'dark', html_escape($settings['application_theme']) === 'dark') ?> id="darkTheme" name="application_theme" type="radio" value="dark" />
+								<input class="form-check-input <?= form_error('application_theme') === '' ? '' : 'is-invalid' ?>" <?= set_radio('application_theme', 'dark', $settings['application_theme'] === 'dark') ?> id="darkTheme" name="application_theme" type="radio" value="dark" />
 								<label class="form-check-label" for="darkTheme">Tema gelap</label>
 							</div>
 							<?= form_error('application_theme', '<div class="invalid-feedback">', '</div>') ?>
 						</div>
 					</fieldset>
 				</div>
-
 				<div class="card-footer">
 					<button class="btn btn-primary shadow" type="submit">
 						<i class="bi bi-floppy-fill"></i>

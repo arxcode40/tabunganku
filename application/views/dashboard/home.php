@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -32,11 +34,9 @@
 							<i class="bi bi-person-standing"></i>
 							Data anggota
 						</h5>
-
 						<div class="card-body">
 							<h1 class="mb-0"><?= $total_members ?></h1>
 						</div>
-
 						<div class="card-footer">
 							<a class="btn btn-primary" href="/anggota/">
 								Lihat selengkapnya
@@ -45,18 +45,15 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="col-sm-6 col-md-4 col-lg-3">
 					<div class="card shadow" data-aos="fade-up" data-aos-delay="100">
 						<h5 class="card-header">
 							<i class="bi bi-arrow-down-up"></i>
 							Data transaksi
 						</h5>
-
 						<div class="card-body">
 							<h1 class="mb-0"><?= $total_transactions ?></h1>
 						</div>
-
 						<div class="card-footer">
 							<a class="btn btn-primary" href="/transaksi/">
 								Lihat selengkapnya

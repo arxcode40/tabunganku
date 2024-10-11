@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -40,7 +42,6 @@
 					)
 				)
 			?>
-				<!-- Card header -->
 				<div class="align-items-center card-header d-flex">
 					<h5 class="mb-0 me-auto">
 						<i class="bi bi-pencil-square"></i>
@@ -51,7 +52,6 @@
 						<span class="d-none d-sm-inline">Kembali</span>
 					</a>
 				</div>
-
 				<div class="card-body">
 					<div class="gx-3 mb-3 row">
 						<label class="col-md-4 col-lg-3 col-form-label d-md-flex" for="id">
@@ -105,7 +105,7 @@
 							<span class="d-none d-md-block fw-medium ms-auto">:</span>
 						</label>
 						<div class="col-md-8 col-lg-9">
-							<input class="form-control <?= form_error('tel') === '' ? '' : 'is-invalid' ?>" id="tel" name="tel" placeholder="Masukkan nomor telepon" type="tel" value="<?= html_escape(set_value('tel', $member['tel'])) ?>" />
+							<input class="form-control <?= form_error('tel') === '' ? '' : 'is-invalid' ?>" id="tel" name="tel" oninput="telFormat();" placeholder="Masukkan nomor telepon" type="tel" value="<?= html_escape(set_value('tel', $member['tel'])) ?>" />
 							<?= form_error('tel', '<div class="invalid-feedback">', '</div>') ?>
 						</div>
 					</div>
@@ -120,7 +120,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="card-footer">
 					<button class="btn btn-primary shadow" type="submit">
 						<i class="bi bi-pencil-square"></i>

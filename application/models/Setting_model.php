@@ -8,10 +8,10 @@ class Setting_model extends CI_Model {
 
 		foreach ($settings as $setting)
 		{
-			$data[$setting['name']] = $setting['value'];
+			$result[$setting['name']] = $setting['value'];
 		}
 
-		return $data;
+		return $result;
 	}
 
 	public function set()

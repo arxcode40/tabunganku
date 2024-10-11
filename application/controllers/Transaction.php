@@ -153,6 +153,7 @@ class Transaction extends CI_Controller {
 		$data['settings']['application_theme'] = 'light';
 		$member = $this->member_model->get($id);
 		$data['title'] = 'Laporan Data Transaksi ' . $member['name'];
+		$data['print'] = TRUE;
 		$data['transactions'] = $this->transaction_model->detail($id);
 
 		$this->layout->view('transaction/report', $data);

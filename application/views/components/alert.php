@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $alert = $this->session->flashdata('alert') ?>
 <?php if (isset($alert)): ?>
 	<div class="alert alert-<?= $alert['status'] ?> alert-dismissible fade shadow show">

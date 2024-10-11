@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -36,7 +38,6 @@
 							<i class="bi bi-upload"></i>
 							<span class="d-none d-sm-inline">Ekspor</span>
 						</button>
-
 						<ul class="dropdown-menu dropdown-menu-end">
 							<li>
 								<h6 class="dropdown-header">
@@ -75,7 +76,6 @@
 						<span class="d-none d-sm-inline">Tambah</span>
 					</a>
 				</div>
-
 				<div class="card-body">
 					<div class="table-responsive">
 						<table class="align-middle mb-0 table table-bordered table-hover table-striped w-100" id="dataTable">
@@ -90,7 +90,6 @@
 									<th scope="col">Aksi</th>
 								</tr>
 							</thead>
-
 							<tbody class="table-group-divider">
 								<?php foreach ($members as $index => $member): ?>
 									<tr class="align-middle <?= $this->session->flashdata('affected_rows') === NULL ? '' : ($this->session->flashdata('affected_rows') === $member['id'] ? 'table-blink table-primary' : '') ?>">
@@ -126,12 +125,10 @@
 				</div>
 			</div>
 		</div>
-
 		<div hidden="hidden">
 			<div class="container py-3 text-body-emphasis" data-bs-theme="light" id="reportPage">
 				<h4 class="mb-0 text-center">Laporan <?= html_escape($settings['application_name']) ?></h4>
 				<h4 class="mb-3 text-center"><?= $title ?></h4>
-
 				<table class="align-middle mb-0 table table-borderless table-printed table-sm w-100" id="reportTable">
 					<thead>
 						<tr class="align-middle table-dark">
@@ -144,7 +141,6 @@
 							<th scope="col">Alamat</th>
 						</tr>
 					</thead>
-
 					<tbody class="table-group-divider">
 						<?php foreach ($members as $index => $member): ?>
 							<tr class="align-middle">

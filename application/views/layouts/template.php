@@ -6,15 +6,15 @@
 	<?php $this->layout->include('layouts/meta') ?>
 
 	<base href="<?= base_url() ?>" />
-
 	<link href="/favicon.svg" rel="apple-touch-icon">
 	<link href="/favicon.svg" rel="icon shortcut" type="image/x-icon">
 	<title><?= $title ?> | <?= html_escape($settings['application_name']) ?></title>
 
-	<?php $this->layout->include('assets/css') ?>
+	<?php $this->layout->include('layouts/stylesheet') ?>
 </head>
-<body class="<?= $this->uri->segment(2) === 'laporan' ? '' : 'bg-body-secondary' ?> d-flex flex-column min-dvh-100">
+<body class="<?= isset($print) === FALSE ? 'bg-body-secondary' : '' ?> d-flex flex-column min-dvh-100">
 	<?php $this->layout->render_section('content') ?>
-	<?php $this->layout->include('assets/js') ?>
+
+	<?php $this->layout->include('layouts/javascript') ?>
 </body>
 </html>

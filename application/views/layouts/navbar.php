@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <nav class="bg-body-tertiary border-bottom navbar navbar-expand-lg shadow sticky-top">
 	<div class="container">
 		<a class="align-items-center d-flex navbar-brand" href="/">
@@ -7,7 +9,6 @@
 		<button class="navbar-toggler" data-bs-target="#navbarCollapse" data-bs-toggle="collapse" type="button">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="flex-column flex-lg-row ms-auto nav nav-pills">
 				<li class="nav-item">
@@ -16,13 +17,11 @@
 						Dasbor
 					</a>
 				</li>
-
 				<li class="dropdown nav-item">
 					<a class="<?= in_array($this->uri->segment(1), array('anggota', 'transaksi')) === FALSE ? '' : 'active' ?> dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#">
 						<i class="bi bi-database-fill"></i>
 						Data Master
 					</a>
-
 					<ul class="dropdown-menu dropdown-menu-lg-end">
 						<li>
 							<h6 class="dropdown-header">
@@ -44,13 +43,11 @@
 						</li>
 					</ul>
 				</li>
-
 				<li class="dropdown nav-item">
 					<a class="<?= in_array($this->uri->segment(1), array('profil', 'pengaturan')) === FALSE ? '' : 'active' ?> dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#">
 						<i class="bi bi-person-circle"></i>
 						Administrator
 					</a>
-
 					<ul class="dropdown-menu dropdown-menu-lg-end">
 						<li>
 							<h6 class="dropdown-header">

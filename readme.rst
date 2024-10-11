@@ -1,71 +1,34 @@
-###################
-What is CodeIgniter
-###################
+# Apa itu TabunganKu
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+TabunganKu adalah sebuah aplikasi tabungan yang dibangun dan digunakan untuk memudahkan dalam mengelola data anggota, data transaksi, dan lain sebagainya.
 
-*******************
-Release Information
-*******************
+**Persyaratan Sistem**
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+- Kerangka kerja: CodeIgniter 3
+- Bahasa: PHP 8.x
+- Basis data: MySQL
+- Server: Laragon
 
-**************************
-Changelog and New Features
-**************************
+**Panduan Instalasi**
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+1. Unduh dan instal aplikasi [Laragon](https://github.com/leokhoa/laragon/releases/download/6.0.0/laragon-wamp.exe) di komputer.
+2. Ekstrak file menggunakan aplikasi [WinRAR](https://www.win-rar.com/postdownload.html).
+3. Salin folder **tabunganku**, lalu tempel ke folder **www**.
+4. Klik tombol **Start All** pada Laragon.
+5. Buka peramban, lalu buka alamat **localhost/phpmyadmin**.
+6. Buat basis data baru dengan nama **tabunganku**.
+7. Impor basis data aplikasi ke dalam basis data **tabunganku**.
+8. Jalankan proyek dengan ketik **https://tabunganku.test/**.
+9. Masuk dengan nama pengguna: **administrator**, kata sandi: **Wasd123@** (Diwajibkan untuk membuat kata sandi baru).
+10. Selesai.
 
-*******************
-Server Requirements
-*******************
+**Fitur Aplikasi**
 
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+- Login Admin
+- Dasbor Admin
+- Data Anggota
+- Data Transaksi
+- Data Laporan (CSV, Excel, PDF, dan cetak)
+- Pengaturan Profil
+- Pengaturan Aplikasi (Nama aplikasi dan tema aplikasi)
+- dan lainnya.

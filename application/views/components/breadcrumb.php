@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <nav class="mb-3">
 	<ol class="bg-body-tertiary breadcrumb p-3 rounded shadow" data-aos="fade-right">
 		<?php foreach ($items as $item): ?>

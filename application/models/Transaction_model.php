@@ -13,7 +13,7 @@ class Transaction_model extends CI_Model {
 		}
 		else
 		{
-			$last_id = intval(substr($result['id'] ?? 'T0000000', 1));
+			$last_id = (int) substr($result['id'], 1);
 
 			return 'T' . str_repeat(0, 7 - strlen($last_id)) . ++$last_id;
 		}
@@ -30,7 +30,7 @@ class Transaction_model extends CI_Model {
 	public function all()
 	{
 		$this->db->select('members.id, members.name, SUM(transactions.deposit) AS deposit, SUM(transactions.withdraw) AS withdraw, SUM(transactions.deposit) - SUM(transactions.withdraw) AS total');
-		$this->db->join('members', 'members.id = transactions.member_id', 'inner');
+		$this->db->join('members', 'members.id = transactions.member_id', 'right');
 		$this->db->group_by(array('members.id', 'members.name'));
 
 		return $this->db->get('transactions')->result_array();
@@ -38,9 +38,7 @@ class Transaction_model extends CI_Model {
 
 	public function detail($id)
 	{
-		$this->db->select('transactions.*, transactions.id AS id');
-		$this->db->join('members', 'members.id = transactions.member_id', 'inner');
-		$this->db->where('transactions.member_id', $id);
+		$this->db->where('member_id', $id);
 
 		return $this->db->get('transactions')->result_array();
 	}

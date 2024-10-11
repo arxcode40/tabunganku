@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -5,7 +7,6 @@
 		<div class="container py-3 text-body-emphasis">
 			<h4 class="mb-0 text-center">Laporan <?= html_escape($settings['application_name']) ?></h4>
 			<h4 class="mb-3 text-center"><?= str_replace('Laporan ', '', $title) ?></h4>
-
 			<table class="align-middle border-black mb-0 table table-bordered table-sm w-100">
 				<thead>
 					<tr class="align-middle table-dark">
@@ -18,7 +19,6 @@
 						<th scope="col">Alamat</th>
 					</tr>
 				</thead>
-
 				<tbody class="table-group-divider">
 					<?php foreach ($members as $index => $member): ?>
 						<tr class="align-middle">

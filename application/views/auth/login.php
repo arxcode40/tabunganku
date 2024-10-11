@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
+
 <?php $this->layout->extend('layouts/template') ?>
 
 <?php $this->layout->section('content') ?>
@@ -16,7 +18,6 @@
 					<img alt="Logo <?= html_escape($settings['application_name']) ?>" loading="lazy" src="favicon.svg" width="24" />
 					<h5 class="mb-0 ms-2"><?= html_escape($settings['application_name']) ?></h5>
 				</div>
-				
 				<div class="card-body">
 					<?php $this->layout->include('components/alert') ?>
 
@@ -28,7 +29,6 @@
 							<input autocapitalize="off" autocomplete="username" autofocus="autofocus" class="form-control <?= form_error('username') === '' ? '' : 'is-invalid' ?>" id="username" name="username" placeholder="Masukkan nama pengguna" type="text" value="<?= html_escape(set_value('username')) ?>" />
 							<?= form_error('username', '<div class="invalid-feedback">', '</div>') ?>
 						</div>
-
 						<div class="col-12">
 							<label class="form-label" for="password">
 								Kata sandi<b class="text-danger">*</b>
@@ -43,7 +43,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="card-footer">
 					<button class="btn btn-primary shadow" type="submit">
 						<i class="bi bi-box-arrow-in-right"></i>

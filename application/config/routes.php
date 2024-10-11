@@ -63,7 +63,7 @@ $route['transaksi/(M\d{7})'] = 'transaction/detail/$1';
 $route['transaksi/(M\d{7})/tambah'] = 'transaction/create/$1';
 $route['transaksi/(M\d{7})/ubah/(T\d{7})'] = 'transaction/update/$2/$1';
 $route['transaksi/(M\d{7})/hapus']['POST'] = 'transaction/delete/$1';
-$route['transaksi/laporan/(M\d{7})'] = 'transaction/report/$1';
+$route['transaksi/(M\d{7})/laporan'] = 'transaction/report/$1';
 
 $route['profil'] = 'user/index';
 $route['pengaturan'] = 'setting/index';
