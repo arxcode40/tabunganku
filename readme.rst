@@ -4,17 +4,19 @@ Apa itu TabunganKu
 
 TabunganKu adalah sebuah aplikasi tabungan yang dibangun dan digunakan untuk memudahkan dalam mengelola data anggota, data transaksi, dan lain sebagainya.
 
-**Persyaratan Sistem**
+Persyaratan Sistem
+==================
 
 - Kerangka kerja: CodeIgniter 3
 - Bahasa: PHP 8.x
 - Basis data: MySQL
 - Server: Laragon
 
-**Panduan Instalasi**
+Panduan Instalasi
+=================
 
-1. Unduh dan instal aplikasi [Laragon](https://github.com/leokhoa/laragon/releases/download/6.0.0/laragon-wamp.exe) di komputer.
-2. Ekstrak file menggunakan aplikasi [WinRAR](https://www.win-rar.com/postdownload.html).
+1. Unduh dan instal aplikasi `Laragon <https://github.com/leokhoa/laragon/releases/download/6.0.0/laragon-wamp.exe>`_ di komputer.
+2. Ekstrak file menggunakan aplikasi `WinRAR <https://www.win-rar.com/postdownload.html>`_.
 3. Salin folder **tabunganku**, lalu tempel ke folder **www**.
 4. Klik tombol **Start All** pada Laragon.
 5. Buka peramban, lalu buka alamat **localhost/phpmyadmin**.
@@ -24,7 +26,8 @@ TabunganKu adalah sebuah aplikasi tabungan yang dibangun dan digunakan untuk mem
 9. Masuk dengan nama pengguna: **administrator**, kata sandi: **Wasd123@** (Diwajibkan untuk membuat kata sandi baru).
 10. Selesai.
 
-**Fitur Aplikasi**
+Fitur Aplikasi
+==============
 
 - Login Admin
 - Dasbor Admin
